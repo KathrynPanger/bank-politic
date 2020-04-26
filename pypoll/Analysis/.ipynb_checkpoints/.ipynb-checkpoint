@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 163,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -13,7 +13,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 164,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -23,15 +23,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 165,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Column Labels: ['Voter ID', 'County', 'Candidate']\n"
+     ]
+    }
+   ],
    "source": [
     "#read the data\n",
     "pypoll_rowlist=[]\n",
     "with open(pypoll_csvpath) as pypoll_csvfile:\n",
     "    pypoll_csvreader = csv.reader(pypoll_csvfile, delimiter=',')\n",
     "    pypol_csv_header = next(pypoll_csvreader)\n",
+    "    print(f\"Column Labels: {csv_header}\")\n",
     "\n",
     "\n",
     "    for row in pypoll_csvreader:\n",
@@ -40,7 +49,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 166,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -52,7 +61,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 167,
    "metadata": {},
    "outputs": [
     {
@@ -82,7 +91,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": 168,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -106,11 +115,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 169,
    "metadata": {},
    "outputs": [],
    "source": [
-    "#create a sorted list of the winners and their percentage of total votes\n",
+    "#find winner and winning percentage (note, this portion of the code is not original, but is modified from https://kite.com/python/answers/how-to-find-the-max-value-in-a-dictionary-in-python)\n",
     "sorted_list=[]\n",
     "poppable_list=candidate_percentage\n",
     "\n",
@@ -127,7 +136,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 170,
    "metadata": {},
    "outputs": [
     {
@@ -140,45 +149,6 @@
    ],
    "source": [
     "print (sorted_list)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 26,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Election Results\n",
-      "-------------------------\n",
-      "Total Votes: 3521001\n",
-      "-------------------------\n",
-      "Khan: 63.00001050837531(2218231.0\n",
-      "Correy: 19.999994319797125(704199.9999999999\n",
-      "Li: 13.999996023857989(492940.0\n",
-      "O'Tooley: 2.999999147969569(105630.0\n",
-      "-------------------------\n",
-      "Winner: Khan\n",
-      "-------------------------\n"
-     ]
-    }
-   ],
-   "source": [
-    "#print the output\n",
-    "\n",
-    "print(\"Election Results\")\n",
-    "print(\"-------------------------\")\n",
-    "print(f\"Total Votes: {len(pypoll_rowlist)}\")\n",
-    "print(\"-------------------------\")\n",
-    "print(f\"{sorted_list[0]}: {sorted_list[1]}({(sorted_list[1]/100)*len(pypoll_rowlist)}\")\n",
-    "print(f\"{sorted_list[2]}: {sorted_list[3]}({(sorted_list[3]/100)*len(pypoll_rowlist)}\")\n",
-    "print(f\"{sorted_list[4]}: {sorted_list[5]}({(sorted_list[5]/100)*len(pypoll_rowlist)}\")\n",
-    "print(f\"{sorted_list[6]}: {sorted_list[7]}({(sorted_list[7]/100)*len(pypoll_rowlist)}\")\n",
-    "print(\"-------------------------\")\n",
-    "print(f\"Winner: {sorted_list[0]}\")\n",
-    "print(\"-------------------------\")\n"
    ]
   },
   {
