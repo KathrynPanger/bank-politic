@@ -33,7 +33,7 @@ summation=0
 for amount in pybank_profitlist_int:
     summation=summation+amount
 
-#get profit differences (note: this code is not original, but comes from https://www.geeksforgeeks.org/python-generate-successive-element-difference-list/)
+#get profit differences
 profit_differences = [pybank_profitlist[i + 1] - pybank_profitlist[i] for i in range(len(pybank_profitlist)-1)]
 
 #get average profit difference
