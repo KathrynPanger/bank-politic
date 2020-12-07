@@ -22,7 +22,7 @@ Pybank folder:
 Pybank tasks:
 * Get total number of months included in the dataset
 * Get total profit/losses" over the entire period
-* Get average change in profit/losses" over the entire period
+* Get average monthly profit/losses over the entire period
 * The greatest increase in profits (date and amount) over the entire period
 * The greatest decrease in losses (date and amount) over the entire period
 
