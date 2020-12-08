@@ -49,4 +49,3 @@ pybank_bonus.write(f"Total: ${total} \n")
 pybank_bonus.write(f"Average  Change: ${avg_gain:.2f} \n")
 pybank_bonus.write(f"Greatest Increase in Profits: {max_date} (${min_gain}) \n")
 pybank_bonus.write(f"Greatest Decrease in Profits: {min_date} (${max_gain}) \n")
-
