@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 #PyPoll tasks:
 #* Get total number of votes cast
@@ -12,37 +7,18 @@
 #* Get winner of the election based on popular vote
 
 
-# In[2]:
-
-
 #Dependencies
 import pandas as pd
 
-
-# In[3]:
-
-
 #Read in data
 df=pd.read_csv("../pypoll/Resources/election_data.csv")
-
-
-# In[4]:
-
 
 #Get number of votes
 unique = df["Voter ID"].unique()
 total_votes=len(unique)
 
-
-# In[5]:
-
-
 #Get candidate names
 candidates = list(df["Candidate"].unique())
-
-
-# In[6]:
-
 
 #Get percentage and number of votes per candidate
 score_dict = {}
@@ -61,10 +37,6 @@ for candidate, score in score_dict.items():
     if score == maxvotes:
         winner = candidate
 
-
-# In[7]:
-
-
 #print the output to a text file
 pypoll_bonus= open(r"pypoll_bonus.txt","w+")
 
@@ -79,4 +51,3 @@ pypoll_bonus.write(f"{candidates[3]}: {percent_dict[candidates[3]]}% \n")
 pypoll_bonus.write("------------------------- \n")
 pypoll_bonus.write(f"Winner: {winner} \n")
 pypoll_bonus.write("-------------------------")
-
