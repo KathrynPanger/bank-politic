@@ -1,5 +1,3 @@
-# Python Challenge: Accessing and Manipulating Data
-
 ## Summary:
 Using only basic python commands, this code will extract target data, perform basic operations on them, and report the findings.
 
